@@ -1,4 +1,20 @@
-# predict.py — FINAL (Keras 3 safe + classes.txt override + auto-detect fallback)
+import sys, subprocess, importlib
+import numpy as np
+import streamlit as st
+
+def ensure_tf():
+    try:
+        importlib.import_module("tensorflow")
+        return
+    except Exception:
+        st.info("Installing TensorFlow (first run)...")
+        subprocess.check_call([
+            sys.executable, "-m", "pip", "install",
+            "tensorflow-cpu==2.20.0", "--no-input"
+        ])
+
+ensure_tf()
+
 import json
 import pathlib
 import itertools
@@ -10,6 +26,7 @@ import tensorflow as tf
 from tensorflow.keras.layers import TextVectorization
 from keras import ops as K
 from keras import layers
+
 
 # --------------------------
 # PATHS
@@ -237,3 +254,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+
