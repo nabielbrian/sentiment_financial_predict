@@ -43,5 +43,5 @@ with st.sidebar:
 if page == "EDA":
     eda.run()
 else:
-    predict = importlib.import_module("predict")  # import berat hanya saat perlu
     predict.run()
+
