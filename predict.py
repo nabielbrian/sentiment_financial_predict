@@ -1,20 +1,3 @@
-import sys, subprocess, importlib
-import numpy as np
-import streamlit as st
-
-def ensure_tf():
-    try:
-        importlib.import_module("tensorflow")
-        return
-    except Exception:
-        st.info("Installing TensorFlow (first run)...")
-        subprocess.check_call([
-            sys.executable, "-m", "pip", "install",
-            "tensorflow-cpu==2.20.0", "--no-input"
-        ])
-
-ensure_tf()
-
 import json
 import pathlib
 import itertools
@@ -254,4 +237,5 @@ def run():
 
 if __name__ == "__main__":
     run()
+
 
