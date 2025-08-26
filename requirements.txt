@@ -1,14 +1,8 @@
-pip==24.2
-setuptools>=70.0.0
-wheel>=0.44.0
-
-# TF 2.16.1 kompatibel dgn NumPy 2.0.x (bukan 2.1+)
-numpy>=2.0.0,<2.1
-pandas==2.2.2
-matplotlib==3.9.0
-scikit-learn==1.5.1
-
 streamlit==1.37.1
-tensorflow-cpu==2.16.1
+tensorflow-cpu==2.20.0
+numpy>=2.3.0
+pandas==2.2.2
+scikit-learn==1.5.1
+matplotlib==3.9.0
 huggingface-hub==0.24.6
-protobuf==4.25.3
+protobuf>=4.25.3
